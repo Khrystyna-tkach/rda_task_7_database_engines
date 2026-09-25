@@ -9,9 +9,10 @@ CREATE TABLE Countries (
 ) ENGINE=InnoDB;
 
 create table GeoIPCache (
-    ID int,
-    IPRange varchar(50),
-    CountryID int
+    ID int NOT NULL,
+    IPRange varchar(50) NOT NULL,
+    CountryID int NOT NULL,
+    PRIMARY KEY (ID)
 ) ENGINE = MEMORY;
 
 create table ProductDescription  (
