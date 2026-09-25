@@ -28,7 +28,7 @@ create table Logs (
 ) ENGINE = BLACKHOLE;
 
 CREATE TABLE ProductReporting (
-    Date DATE,
+    Date DATE NOT NULL,
     ProductName VARCHAR(50),
-    Orders INT
+    Orders INT NOT NULL
 ) ENGINE = CSV;
