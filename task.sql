@@ -9,22 +9,22 @@ CREATE TABLE Countries (
 ) ENGINE=InnoDB;
 
 CREATE TABLE GeoIPCache (
-    ID INT,
-    IPRange VARCHAR(50),
-    CountryID INT
+    ID INT NOT NULL,
+    IPRange VARCHAR(50) NOT NULL,
+    CountryID INT NOT NULL
 ) ENGINE=MEMORY;
 
 CREATE TABLE ProductDescription (
-    ID INT,
-    Description VARCHAR(100),
-    ProductID INT,
-    CountryID INT
+    ID INT NOT NULL,
+    Description VARCHAR(100) NOT NULL,
+    ProductID INT NOT NULL,
+    CountryID INT NOT NULL
 ) ENGINE=InnoDB;
 
 CREATE TABLE Logs (
-    ID INT,
-    Timestamp DATETIME,
-    Message VARCHAR(100)
+    ID INT NOT NULL,
+    Timestamp DATETIME NOT NULL,
+    Message VARCHAR(100) NOT NULL
 ) ENGINE=BLACKHOLE;
 
 CREATE TABLE ProductReporting (
