@@ -1,35 +1,34 @@
-CREATE DATABASE ShopDB; 
-USE ShopDB; 
+CREATE DATABASE ShopDB;
+USE ShopDB;
 
--- Create a table to store countries 
+-- Create a table to store countries
 CREATE TABLE Countries (
     ID INT,
     Name VARCHAR(50),
     PRIMARY KEY (ID)
 ) ENGINE=InnoDB;
 
-create table GeoIPCache (
-    ID int NOT NULL,
-    IPRange varchar(50) NOT NULL,
-    CountryID int NOT NULL,
-    PRIMARY KEY (ID)
-) ENGINE = MEMORY;
+CREATE TABLE GeoIPCache (
+    ID INT,
+    IPRange VARCHAR(50),
+    CountryID INT
+) ENGINE=MEMORY;
 
-create table ProductDescription  (
-     ID int,
-     Description varchar(100),
-     ProductID int,
-     CountryID int
-) ENGINE = InnoDB;
+CREATE TABLE ProductDescription (
+    ID INT,
+    Description VARCHAR(100),
+    ProductID INT,
+    CountryID INT
+) ENGINE=InnoDB;
 
-create table Logs (
-    id int,
-    Timestamp TIMESTAMP,
-    Message varchar(100)
-) ENGINE = BLACKHOLE;
+CREATE TABLE Logs (
+    ID INT,
+    Timestamp DATETIME,
+    Message VARCHAR(100)
+) ENGINE=BLACKHOLE;
 
 CREATE TABLE ProductReporting (
     Date DATE NOT NULL,
-    ProductName VARCHAR(50),
+    ProductName VARCHAR(50) NOT NULL,
     Orders INT NOT NULL
-) ENGINE = CSV;
+) ENGINE=CSV;
